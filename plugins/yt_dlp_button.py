@@ -1,5 +1,5 @@
 import logging
-
+from config import REFERER, REFERER_URL
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
                     level=logging.INFO)
@@ -205,6 +205,9 @@ async def yt_dlp_call_back(bot, update):
     if "closeload" in yt_dlp_url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://closeload.com/")
+    if REFERER in yt_dlp_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://{REFERER_URL}/")
     if yt_dlp_username is not None:
         command_to_exec.append("--username")
         command_to_exec.append(yt_dlp_username)
