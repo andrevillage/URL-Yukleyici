@@ -1,5 +1,5 @@
 import logging
-
+from config import REFERER, REFERER_URL
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[logging.FileHandler('log.txt'), logging.StreamHandler()],
     level=logging.INFO)
@@ -122,6 +122,9 @@ async def echo(bot, update):
     if "mail.ru" in url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://my.mail.ru/")
+    if REFERER in url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://{REFERER_URL}/")
     if yt_dlp_username is not None:
         command_to_exec.append("--username")
         command_to_exec.append(yt_dlp_username)
