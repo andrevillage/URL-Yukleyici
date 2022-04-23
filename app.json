@@ -68,6 +68,14 @@
       "value": "",
       "required": false
     },
+    "REFERER_URL": {
+      "description": "403 Hatası veren siteler için",
+      "value": ""
+    },
+    "REFERER": {
+      "description": "403 Hatası veren siteler için",
+      "value": ""
+    },
     "HTTP_PROXY": {
       "description": "Kısıtlı alanlarda yt-dlp'ye erişmek için proxy ekleyin.",
       "value": "",
